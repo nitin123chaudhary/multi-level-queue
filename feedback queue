@@ -85,3 +85,58 @@ public:
 	void DisplayResult(ProcessInfo&);
 
 };
+public:
+	ProcessInfo();
+	~ProcessInfo();
+	void takeInput();
+	int FindTotalExecutionTime(ProcessInfo&);
+	static bool SortOnID(const ProcessData& x , const ProcessData& y);
+	static bool SortOnArrivalTime( const ProcessData& x ,const ProcessData& y);
+	static bool Numsort( const ProcessData& x ,const ProcessData& y);
+	void StartScheduling(ProcessInfo&);
+	void DisplayResult(ProcessInfo&);
+
+};#include <iostream>
+#include <bits/stdc++.h>
+#include <vector>
+
+using namespace std;
+
+struct ProcessData
+{
+	int Num;
+	int Pid;  //Process Id
+	int Arrival_time; //Process Arrival Time
+	int Burst_time; //Process Bruest Time
+	int Priority; //Process Priority
+	int Finish_time; //Process Finish Time
+	int Time_to_Finsh; //Process Remaining  Time During Execution
+	int Waiting_Time; //Waiting Time
+	int Start_Time; //Process start Time
+	int Response_Time;
+
+};
+struct ProcessData currentProcess;
+
+
+class ProcessInfo
+{
+public:
+
+	vector< ProcessData > input;
+	vector<ProcessData> input_copy;
+	int numberOfProcesses;
+	int total_exection_time;
+	int* Ghant;
+public:
+	ProcessInfo();
+	~ProcessInfo();
+	void takeInput();
+	int FindTotalExecutionTime(ProcessInfo&);
+	static bool SortOnID(const ProcessData& x , const ProcessData& y);
+	static bool SortOnArrivalTime( const ProcessData& x ,const ProcessData& y);
+	static bool Numsort( const ProcessData& x ,const ProcessData& y);
+	void StartScheduling(ProcessInfo&);
+	void DisplayResult(ProcessInfo&);
+
+};
